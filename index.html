@@ -160,64 +160,53 @@
 						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Overview</h3>
 						<p class="paper-paragraph" align="justify">
-							The SROI (Strawberry Robotic Operations Intelligence) dataset is a comprehensive collection of human demonstrations for robotic strawberry picking. It includes synchronized visual data, trajectory information, and end-effector states collected during expert demonstrations of strawberry picking tasks. This dataset is specifically designed to support the development of imitation learning algorithms for robotic manipulation in agricultural settings.
+							The SROI dataset contains demonstrations of expert strawberry picking operations, collected using a teleoperated robotic system. Each demonstration includes synchronized data from multiple sensors, capturing the complete picking process from approach to successful harvest.
 						</p>
-						<span class="figure" style="margin-top: 1em; margin-bottom: 0;">
-							<video width="100%" style="margin-top: 1em;" controls autoplay muted loop>
-								<source src="images/picking.mp4" type="video/mp4">
-								Your browser does not support the video tag.
-							</video>
-						</span>						
-						<br>
 						<br>
 
 						<hr style="margin-top: 0em;">
-						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Contents</h3>
+						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Structure</h3>
 						<p class="paper-paragraph" align="justify">
-							Our dataset includes:
+							The dataset is organized as follows:
 							<ul style="margin-left: 2em; margin-top: 1em;">
-								<li><strong>Visual Data:</strong> RGB images and depth maps of strawberry clusters</li>
-								<li><strong>Trajectory Data:</strong> Time-series data of robot arm positions and orientations</li>
-								<li><strong>End-Effector States:</strong> Gripper positions and force sensor readings</li>
-								<li><strong>Task Annotations:</strong> Success/failure labels and picking difficulty ratings</li>
-								<li><strong>Scene Information:</strong> Cluster configurations and environmental conditions</li>
+								<li><strong>/images/</strong> - RGB and depth images of strawberry clusters</li>
+								<li><strong>/trajectories/</strong> - Robot arm trajectories in joint and Cartesian space</li>
+								<li><strong>/annotations/</strong> - Task success labels and picking difficulty ratings</li>
+								<li><strong>/sensor_data/</strong> - Force sensor readings and gripper states</li>
+								<li><strong>/metadata/</strong> - Scene descriptions and environmental conditions</li>
 							</ul>
 						</p>
-						<span class="figure" style="margin-top: 1em; margin-bottom: 0;">
-							<img src="images/real_challenge.png" alt="Dataset examples" width="100%" style="margin-top: 1em;">
-							<p style="text-align: center; margin-top: 0.5em;">Example scenarios from our dataset showing various strawberry cluster configurations</p>
-						</span>						
 						<br>
 
 						<hr style="margin-top: 0em;">
-						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Data Collection Setup</h3>
+						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Data Format</h3>
 						<p class="paper-paragraph" align="justify">
-							The data collection system consists of a 4-DoF SCARA robotic arm equipped with RGB-D cameras and force sensors. Expert demonstrators controlled the robot through a custom teleoperation interface, performing picking tasks on both real and artificial strawberry clusters. The setup ensures high-quality demonstrations while capturing all relevant sensor data for learning.
+							Each demonstration is stored in the following format:
+							<ul style="margin-left: 2em; margin-top: 1em;">
+								<li><strong>Images:</strong> PNG format, 640x480 resolution</li>
+								<li><strong>Trajectories:</strong> CSV files with timestamped joint angles and end-effector poses</li>
+								<li><strong>Sensor Data:</strong> JSON files containing force readings and gripper states</li>
+								<li><strong>Annotations:</strong> YAML files with task labels and difficulty scores</li>
+							</ul>
 						</p>
-						<img src="images/picking-operating.png" alt="Data collection setup" style="width:100%; margin-top:1em;">
 						<br>
 
 						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Statistics</h3>
-						<span class="figure" style="margin-top: 0.1em; margin-bottom: 0;">
-							<p class="paper-paragraph" align="justify">
-								The dataset contains:
-								<ul style="margin-left: 2em; margin-top: 1em;">
-									<li>X hours of demonstrations</li>
-									<li>Y successful picking trajectories</li>
-									<li>Z different cluster configurations</li>
-									<li>Multiple lighting conditions and environmental variations</li>
-								</ul>
-							</p>
-							<img src="images/state_6.png" width="60%" style="margin-top: 0.5em" alt="Dataset statistics" />
-							<div style="margin-bottom: 1.5em; text-align: center;">Distribution of cluster configurations in the dataset</div>
-						</span>
+						<p class="paper-paragraph" align="justify">
+							The dataset contains:
+							<ul style="margin-left: 2em; margin-top: 1em;">
+								<li>100 successful picking demonstrations</li>
+								<li>20 different cluster configurations</li>
+								<li>Over 50,000 annotated frames</li>
+								<li>5 different lighting conditions</li>
+							</ul>
+						</p>
+						<br>
 
 						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Contact</h3>
 						<p><a href="https://github.com/ZhenghaoFei/">Fei Zhenghao</a>, Researcher at BRL, <span style="color:rgb(62, 61, 61)">zfei@zju.edu.cn</span></p>
-						<br>
-						<br>
 					</section>
 			</div>
 
