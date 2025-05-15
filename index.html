@@ -192,6 +192,47 @@
 						<br>
 
 						<hr style="margin-top: 0em;">
+						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Visualizing the Dataset on the Web</h3>
+						<p class="paper-paragraph" align="justify">
+							You can directly visualize the ROS bag data in your web browser using tools like Foxglove Studio or Webviz. These tools allow for interactive exploration of your data without needing to install desktop software.
+						</p>
+
+						<h4 style="margin-bottom: 0.3em; color: #1E3A8A; font-size: 115%; margin-top: 1em;">Using Foxglove Studio</h4>
+						<p class="paper-paragraph" align="justify">
+							Foxglove Studio is a powerful, open-source web-based visualization tool. Here's how to get started:
+							<ol style="margin-left: 2em; margin-top: 1em;">
+								<li>Visit <a href="https://studio.foxglove.dev/" target="_blank">Foxglove Studio</a> in your browser.</li>
+								<li>Click "Open local file" and select your ROS bag file.</li>
+								<li>Configure your layout by adding panels for:
+									<ul style="margin-left: 1em;">
+										<li>Image panels for <code>/oak/left/image_raw/compressed</code> and <code>/oak/right/image_raw/compressed</code></li>
+										<li>Plot panel for <code>/oak/imu/data</code></li>
+										<li>Raw Messages panel for <code>/upi/status/is_action</code></li>
+									</ul>
+								</li>
+								<li>Use the playback controls to navigate through the data.</li>
+							</ol>
+						</p>
+						<p class="paper-paragraph" align="justify">
+							For more advanced visualization features in Foxglove Studio:
+							<ul style="margin-left: 2em; margin-top: 1em;">
+								<li>Use the 3D panel to visualize camera poses and point clouds (if available).</li>
+								<li>Create custom layouts and save them for future use.</li>
+								<li>Explore extensions for custom data types and visualizations.</li>
+							</ul>
+						</p>
+
+						<h4 style="margin-bottom: 0.3em; color: #1E3A8A; font-size: 115%; margin-top: 1em;">Using Webviz</h4>
+						<p class="paper-paragraph" align="justify">
+							Webviz is another excellent web-based tool for ROS bag visualization, developed by Cruise. You can access it at <a href="https://webviz.io/" target="_blank">webviz.io</a>.
+							Similar to Foxglove, you can load your ROS bag files and configure various panels to inspect topics, messages, and sensor data.
+						</p>
+						<p class="paper-paragraph" align="justify">
+							Both tools offer rich features, so you can choose the one that best suits your visualization needs and preferences.
+						</p>
+						<br>
+
+						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Data Format</h3>
 						<p class="paper-paragraph" align="justify">
 							Each demonstration is stored in the following format:
