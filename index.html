@@ -167,13 +167,26 @@
 						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Structure</h3>
 						<p class="paper-paragraph" align="justify">
-							The dataset is organized as follows:
+							The dataset is organized as ROS bags containing the following topics:
 							<ul style="margin-left: 2em; margin-top: 1em;">
-								<li><strong>/images/</strong> - RGB and depth images of strawberry clusters</li>
-								<li><strong>/trajectories/</strong> - Robot arm trajectories in joint and Cartesian space</li>
-								<li><strong>/annotations/</strong> - Task success labels and picking difficulty ratings</li>
-								<li><strong>/sensor_data/</strong> - Force sensor readings and gripper states</li>
-								<li><strong>/metadata/</strong> - Scene descriptions and environmental conditions</li>
+								<li><strong>OAK Camera Topics:</strong>
+									<ul style="margin-left: 1em;">
+										<li><code>/oak/left/image_raw/compressed</code> - Left camera RGB images</li>
+										<li><code>/oak/right/image_raw/compressed</code> - Right camera RGB images</li>
+										<li><code>/oak/imu/data</code> - IMU sensor data</li>
+									</ul>
+								</li>
+								<li><strong>Intel RealSense D435 Topics:</strong>
+									<ul style="margin-left: 1em;">
+										<li>RGB and depth data (topic names to be added)</li>
+									</ul>
+								</li>
+								<li><strong>System Topics:</strong>
+									<ul style="margin-left: 1em;">
+										<li><code>/upi/status/is_action</code> - Action status information</li>
+										<li><code>/clock</code> - ROS time synchronization</li>
+									</ul>
+								</li>
 							</ul>
 						</p>
 						<br>
