@@ -49,22 +49,14 @@
 						</h2>
 						
 						<div class="publication-authors" style="text-align: center; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-							<a href="#" style="color: #2F855A;">Hou Linsheng<sup>2&dagger; * ‡;</sup></a>,
-							<a href="#" style="color: #2F855A;">Lu Wenwu<sup>2*</sup></a>,
-							<a href="#" style="color: #2F855A;">Yanan Wang<sup>1*</sup></a>,
-							<a href="#" style="color: #2F855A;">Peng Chen<sup>2*</sup></a>,
-							<a href="#" style="color: #2F855A;">Zhenghao Fei<sup>2*</sup></a>,
+							<a href="#" style="color: #2F855A;">Hou Linsheng</a>,
+							<a href="#" style="color: #2F855A;">Lu Wenwu</a>,
+							<a href="#" style="color: #2F855A;">Yanan Wang</a>,
+							<a href="#" style="color: #2F855A;">Peng Chen</a>,
+							<a href="#" style="color: #2F855A;">Zhenghao Fei</a>
 						</div>
-
-						<p style="text-align: center; font-size: 110%; margin-top: 0.2em; margin-bottom: 0; color: #000000;">
-							&dagger; * Equal contribution, &ddagger; Project Leader
-						</p>
 						
-						<p style="margin-top: 0.2em; text-align: center; font-size: 110%; line-height: 1.8; max-width: 800px; margin: 0.2em auto;">
-							<sup>1</sup> College of Biosystems Engineering and Food Science, Zhejiang University, Hangzhou;<br> 
-							<sup>2</sup> ZJU-Hangzhou Global Scientific and Technological Innovation Center, Zhejiang University;<br>
-							<sup>3</sup> Zhejiang Sci-Tech University;
-						</p>											
+						<br>
 						
 						<div class="column has-text-centered">
 							<div class="publication-links">
@@ -75,16 +67,6 @@
 											<i class="fas fa-database"></i>
 										</span>
 										<span>Download Dataset</span>
-									</a>
-								</span>
-						
-								<!-- Documentation -->
-								<span class="link-block">
-									<a target="_blank" href="#" class="external-link button is-normal is-rounded is-dark">
-										<span class="icon">
-											<i class="fas fa-book"></i>
-										</span>
-										<span>Documentation</span>
 									</a>
 								</span>
 								
@@ -162,6 +144,26 @@
 						<p class="paper-paragraph" align="justify">
 							The SROI dataset contains demonstrations of expert strawberry picking operations, collected using a teleoperated robotic system. Each demonstration includes synchronized data from multiple sensors, capturing the complete picking process from approach to successful harvest.
 						</p>
+						<p class="paper-paragraph" align="justify">
+							Key benefits of the SROI dataset:
+							<ul style="margin-left: 2em; margin-top: 1em;">
+								<li><strong>Multi-sensor Fusion:</strong> Combines stereo RGB images from OAK camera and Intel RealSense D435, along with IMU data for robust perception and motion analysis.</li>
+								<li><strong>High-Quality Demonstrations:</strong> Expert demonstrations ensure high-quality training data for imitation learning and policy development.</li>
+								<li><strong>Comprehensive Coverage:</strong> Includes various picking scenarios, lighting conditions, and strawberry cluster configurations for diverse training scenarios.</li>
+								<li><strong>Time-Synchronized Data:</strong> All sensor data is precisely synchronized, enabling accurate temporal analysis and multi-modal learning.</li>
+								<li><strong>Rich Annotations:</strong> Includes action status information and camera calibration data for precise analysis and system development.</li>
+							</ul>
+						</p>
+						<br>
+
+						<hr style="margin-top: 0em;">
+						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Demo</h3>
+						<div style="text-align: center; margin: 2em 0;">
+							<video width="100%" controls autoplay loop muted style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+								<source src="images/SROI_datasets_demo.webm" type="video/webm">
+								Your browser does not support the video tag.
+							</video>
+						</div>
 						<br>
 
 						<hr style="margin-top: 0em;">
@@ -178,7 +180,15 @@
 								</li>
 								<li><strong>Intel RealSense D435 Topics:</strong>
 									<ul style="margin-left: 1em;">
-										<li>RGB and depth data (topic names to be added)</li>
+										<li><code>/camera/color/image_raw/compressed</code> - RGB camera images</li>
+										<li><code>/camera/infra1/image_rect_raw/compressed</code> - Left IR camera images</li>
+										<li><code>/camera/infra2/image_rect_raw/compressed</code> - Right IR camera images</li>
+										<li><code>/camera/imu</code> - IMU sensor data</li>
+										<li><code>/camera/accel/imu_info</code> - Accelerometer information</li>
+										<li><code>/camera/gyro/imu_info</code> - Gyroscope information</li>
+										<li><code>/camera/color/camera_info</code> - RGB camera calibration info</li>
+										<li><code>/camera/infra1/camera_info</code> - Left IR camera calibration info</li>
+										<li><code>/camera/infra2/camera_info</code> - Right IR camera calibration info</li>
 									</ul>
 								</li>
 								<li><strong>System Topics:</strong>
@@ -194,67 +204,50 @@
 						<hr style="margin-top: 0em;">
 						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Visualizing the Dataset on the Web</h3>
 						<p class="paper-paragraph" align="justify">
-							You can directly visualize the ROS bag data in your web browser using tools like Foxglove Studio or Webviz. These tools allow for interactive exploration of your data without needing to install desktop software.
+							You can directly visualize the ROS bag data in your web browser using Foxglove Studio, a powerful web-based visualization tool that allows for interactive exploration of your data without needing to install desktop software.
 						</p>
 
 						<h4 style="margin-bottom: 0.3em; color: #1E3A8A; font-size: 115%; margin-top: 1em;">Using Foxglove Studio</h4>
 						<p class="paper-paragraph" align="justify">
-							Foxglove Studio is a powerful, open-source web-based visualization tool. Here's how to get started:
+							Here's how to get started:
 							<ol style="margin-left: 2em; margin-top: 1em;">
 								<li>Visit <a href="https://studio.foxglove.dev/" target="_blank">Foxglove Studio</a> in your browser.</li>
 								<li>Click "Open local file" and select your ROS bag file.</li>
 								<li>Configure your layout by adding panels for:
 									<ul style="margin-left: 1em;">
-										<li>Image panels for <code>/oak/left/image_raw/compressed</code> and <code>/oak/right/image_raw/compressed</code></li>
-										<li>Plot panel for <code>/oak/imu/data</code></li>
+										<li>Image panels for:
+											<ul style="margin-left: 1em;">
+												<li>OAK camera: <code>/oak/left/image_raw/compressed</code> and <code>/oak/right/image_raw/compressed</code></li>
+												<li>D435 camera: <code>/camera/color/image_raw/compressed</code>, <code>/camera/infra1/image_rect_raw/compressed</code>, and <code>/camera/infra2/image_rect_raw/compressed</code></li>
+											</ul>
+										</li>
+										<li>Plot panels for:
+											<ul style="margin-left: 1em;">
+												<li>OAK IMU: <code>/oak/imu/data</code></li>
+												<li>D435 IMU: <code>/camera/imu</code></li>
+											</ul>
+										</li>
 										<li>Raw Messages panel for <code>/upi/status/is_action</code></li>
 									</ul>
 								</li>
 								<li>Use the playback controls to navigate through the data.</li>
 							</ol>
 						</p>
-						<p class="paper-paragraph" align="justify">
-							For more advanced visualization features in Foxglove Studio:
-							<ul style="margin-left: 2em; margin-top: 1em;">
-								<li>Use the 3D panel to visualize camera poses and point clouds (if available).</li>
-								<li>Create custom layouts and save them for future use.</li>
-								<li>Explore extensions for custom data types and visualizations.</li>
-							</ul>
-						</p>
-
-						<h4 style="margin-bottom: 0.3em; color: #1E3A8A; font-size: 115%; margin-top: 1em;">Using Webviz</h4>
-						<p class="paper-paragraph" align="justify">
-							Webviz is another excellent web-based tool for ROS bag visualization, developed by Cruise. You can access it at <a href="https://webviz.io/" target="_blank">webviz.io</a>.
-							Similar to Foxglove, you can load your ROS bag files and configure various panels to inspect topics, messages, and sensor data.
-						</p>
-						<p class="paper-paragraph" align="justify">
-							Both tools offer rich features, so you can choose the one that best suits your visualization needs and preferences.
-						</p>
 						<br>
 
 						<hr style="margin-top: 0em;">
-						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Data Format</h3>
+						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Usage</h3>
 						<p class="paper-paragraph" align="justify">
-							Each demonstration is stored in the following format:
+							To help you get started with the SROI dataset, we provide a set of utilities for processing and analyzing the ROS bag files. These utilities include:
 							<ul style="margin-left: 2em; margin-top: 1em;">
-								<li><strong>Images:</strong> PNG format, 640x480 resolution</li>
-								<li><strong>Trajectories:</strong> CSV files with timestamped joint angles and end-effector poses</li>
-								<li><strong>Sensor Data:</strong> JSON files containing force readings and gripper states</li>
-								<li><strong>Annotations:</strong> YAML files with task labels and difficulty scores</li>
+								<li>ROS bag processing scripts</li>
+								<li>Data extraction and conversion tools</li>
+								<li>Example visualization code</li>
+								<li>Utility functions for common tasks</li>
 							</ul>
 						</p>
-						<br>
-
-						<hr style="margin-top: 0em;">
-						<h3 style="margin-bottom: 0.5em; color: #1E3A8A; font-size: 130%;">Dataset Statistics</h3>
 						<p class="paper-paragraph" align="justify">
-							The dataset contains:
-							<ul style="margin-left: 2em; margin-top: 1em;">
-								<li>100 successful picking demonstrations</li>
-								<li>20 different cluster configurations</li>
-								<li>Over 50,000 annotated frames</li>
-								<li>5 different lighting conditions</li>
-							</ul>
+							Visit our <a href="https://github.com/forgetwhatuwant/SROI_rosbags_utilities" target="_blank">SROI_rosbags_utilities</a> repository to access these tools and get started with your analysis.
 						</p>
 						<br>
 
@@ -282,7 +275,6 @@
 								<path d="M285.224876,37.5486902 L142.612438,37.5486902 L110.920785,0 L31.6916529,0 C14.2612438,0 0,16.8969106 0,37.5486902 L0,112.646071 L316.916529,112.646071 L316.916529,75.0973805 C316.916529,54.4456008 302.655285,37.5486902 285.224876,37.5486902 Z" id="Shape" fill="#FFA000"></path>
 								<path d="M285.224876,36 L31.6916529,36 C14.2612438,36 0,50.2838568 0,67.7419039 L0,226.451424 C0,243.909471 14.2612438,258.193328 31.6916529,258.193328 L285.224876,258.193328 C302.655285,258.193328 316.916529,243.909471 316.916529,226.451424 L316.916529,67.7419039 C316.916529,50.2838568 302.655285,36 285.224876,36 Z" id="Shape" fill="#FFCA28"></path>
 							</g>
-							<path d="M126.154134,250.559184 C126.850974,251.883673 127.300549,253.006122 127.772602,254.106122 C128.469442,255.206122 128.919016,256.104082 129.638335,257.002041 C130.559962,258.326531 131.728855,259 133.100057,259 C134.493737,259 135.415364,258.55102 136.112204,257.67551 C136.809044,257.002041 137.258619,255.902041 137.258619,254.577551 C137.258619,253.904082 137.258619,252.804082 137.033832,251.457143 C136.786566,249.908163 136.561779,249.032653 136.561779,248.583673 C136.089726,242.814286 135.864939,237.920408 135.864939,233.273469 C135.864939,225.057143 136.786566,217.514286 138.180246,210.846939 C139.798713,204.202041 141.889234,198.634694 144.429328,193.763265 C147.216689,188.869388 150.678411,184.873469 154.836973,181.326531 C158.995535,177.779592 163.626149,174.883673 168.481552,172.661224 C173.336954,170.438776 179.113983,168.665306 185.587852,167.340816 C192.061722,166.218367 198.760378,165.342857 205.481514,164.669388 C212.18017,164.220408 219.598146,163.995918 228.162535,163.995918 L246.055591,163.995918 L246.055591,195.514286 C246.055591,197.736735 246.752431,199.510204 248.370899,201.059184 C250.214153,202.608163 252.079886,203.506122 254.372715,203.506122 C256.463236,203.506122 258.531277,202.608163 260.172223,201.059184 L326.102289,137.797959 C327.720757,136.24898 328.642384,134.47551 328.642384,132.253061 C328.642384,130.030612 327.720757,128.257143 326.102289,126.708163 L260.172223,63.4469388 C258.553756,61.8979592 256.463236,61 254.395194,61 C252.079886,61 250.236632,61.8979592 248.393377,63.4469388 C246.77491,64.9959184 246.07807,66.7693878 246.07807,68.9918367 L246.07807,100.510204 L228.162535,100.510204 C166.863084,100.510204 129.166282,117.167347 115.274437,150.459184 C110.666301,161.54898 108.350993,175.310204 108.350993,191.742857 C108.350993,205.279592 113.903236,223.912245 124.760454,247.438776 C125.00772,248.112245 125.457294,249.010204 126.154134,250.559184 Z" id="Shape" fill="#FFFFFF" transform="translate(218.496689, 160.000000) scale(-1, 1) translate(-218.496689, -160.000000) "></path>
 						</g>
 					</g>
 					<!-- File -->
